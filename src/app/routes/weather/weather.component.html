@@ -1,0 +1,20 @@
+<h3 class="title-header">Weather Info</h3>
+
+<div class="row section-search">
+  <div>
+    <form [formGroup]="searchForm" class="form" (submit)="searchPattern()">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Type here" matInput formControlName="searchText">
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="btn" type="submit" [disabled]="searchForm.invalid || loading"
+        (click)="searchPattern()">
+        <span class="fa fa-search"></span>
+      </button>
+    </form>
+  </div>
+  <div class="btn-group">
+    <button mat-raised-button color="primary" (click)="searchByLocation()">Use location <span
+        class="fa fa-location-arrow"></span> </button>
+    <span *ngIf="loading" class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+  </div>
+</div>

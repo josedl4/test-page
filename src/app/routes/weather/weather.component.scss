@@ -1,0 +1,17 @@
+.search-section {
+  display: flex;
+  justify-content: baseline;
+  padding-bottom: 30px;
+
+
+
+  .btn-group {
+    padding-left: 25px;
+
+    button {
+      span {
+        padding-left: 5px;
+      }
+    }
+  }
+}
