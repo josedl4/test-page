@@ -1,0 +1,5 @@
+<app-header [ngClass]="{ 'menu-active': showMenu }" (evtMenu)="toggleMenu()"></app-header>
+<app-sidebar [ngClass]="{ 'hide': !showMenu }"></app-sidebar>
+<main>
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+app-header {
+  flex: 0 0 100%;
+}
+
+app-sidebar {
+  flex: 0 0 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 280px;
+
+  @media all and (max-width: 767px) {
+    align-self: stretch;
+    height: calc(100% - 4rem);
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: transform .5s;
+    transform: translateZ(0);
+    z-index: 3;
+
+    &.hide {
+      transform: translateX(-100%) translateZ(0);
+      display: none;
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    position: relative;
+    max-height: calc(100% - 4rem);
+  }
+}
+
+main {
+  flex: 1 1 0;
+  overflow-y: auto;
+  height: 100%;
+  max-height: calc(100% - 4rem);
+  padding: 2rem;
+}

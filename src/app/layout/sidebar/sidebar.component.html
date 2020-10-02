@@ -1,0 +1,11 @@
+<nav class="nav">
+  <ul class="nav-list">
+    <li *ngFor="let item of menuItems" class="nav-item" [routerLinkActive]="['active']">
+      <!-- If single menu item -->
+      <a class="nav-link" [routerLink]="item.link" title="{{ item.text }}" (click)="toggleSubmenuClick($event)">
+        <img class="nav-icon" [src]="item.icon" [alt]="item.text" />
+        <span class="nav-text">{{ item.text }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>
