@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+}
+
+.mat-row {
+  height: auto;
+}
+.mat-header-cell{
+    padding-left: 0.5rem;
+}
+.mat-cell {
+  padding: 8px 0.5rem 0.5rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: baseline;
+    padding-bottom: 30px;
+    .title-header {
+        margin: 0 !important;
+        padding: 5px 0;
+    }
+    .btn-group {
+        padding-left: 25px;
+        button {
+            span {
+                padding-left: 5px;
+            }
+        }
+    }
+}

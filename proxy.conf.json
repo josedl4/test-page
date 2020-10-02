@@ -1,0 +1,7 @@
+{
+  "/portal/site/egob/*": {
+    "target": "https://datos.madrid.es",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

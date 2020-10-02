@@ -1,0 +1,46 @@
+<div class="row section-header">
+  <div>
+    <h3 class="title-header">Parking list</h3>
+  </div>
+  <div class="btn-group">
+    <button mat-raised-button color="primary" (click)="sortByDistance()">Sort by distance <span
+        class="fa fa-location-arrow"></span> </button>
+    <span *ngIf="loading" class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+  </div>
+</div>
+
+<table mat-table [dataSource]="allParkings" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let element"> {{element.description || '-'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.address.streetAddress}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="distance">
+    <th mat-header-cell *matHeaderCellDef> Distance </th>
+    <td mat-cell *matCellDef="let element">
+      {{element.distance != null ?  ((element.distance | number:'.0-2':'en') + 'Km') : '-'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="directions">
+    <th mat-header-cell *matHeaderCellDef> Directions </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="howToArrive(element.location)">
+        How to arrive?
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
