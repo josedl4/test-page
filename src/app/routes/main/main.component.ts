@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss']
+})
+export class MainComponent implements OnInit {
+
+  public parkingLink = '/home/parking';
+  public weatherLink = '/home/weather';
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

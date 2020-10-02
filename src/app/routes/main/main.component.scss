@@ -1,0 +1,19 @@
+.card {
+  padding: 0.9375rem 1.875rem;
+
+  .card-text {
+    p {
+      margin: 0.3125rem 0;
+    }
+
+    ul {
+      padding-top: 0.3125rem;
+      list-style-type: none;
+      padding-left: 0.9375rem;
+
+      li {
+        padding: 0.0625rem;
+      }
+    }
+  }
+}
