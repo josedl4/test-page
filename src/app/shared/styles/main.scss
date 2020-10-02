@@ -1,0 +1,33 @@
+@use './colors.scss'as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: $black;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: calc(.85rem + .25vw);
+  min-height: 100vh;
+
+  @media all and (min-width: 1920px) {
+    font-size: 18.4px;
+  }
+}
+
+body {
+  min-height: 100vh;
+}
+
+input,
+select,
+span,
+div {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+
+.custom-snackbar-panel {
+  padding: 0 !important;
+}

@@ -1,0 +1,33 @@
+@use './colors.scss' as *;
+
+.table {
+    &-actions {
+        &-button {
+            align-items: center;
+            background-color: transparent;
+            border-radius: 100px;
+            padding: .2rem;
+            display: inline-flex;
+            transition: background-color .2s;
+            &:hover,
+            &:focus {
+                background-color: $theme_lightgreen;
+            }
+            &:disabled {
+                background-color: unset !important;
+                cursor: not-allowed;
+            }
+            &:nth-of-type(n + 2) {
+                margin-left: 1rem;
+            }
+        }
+        &-icon {
+            height: 1.25rem;
+            object-fit: contain;
+            object-position: center;
+            padding: .2rem;
+            pointer-events: none;
+            width: 1.25rem;
+        }
+    }
+}
