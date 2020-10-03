@@ -1,17 +1,78 @@
-.search-section {
+.section-search {
+  padding-left: 3.125rem;
   display: flex;
   justify-content: baseline;
-  padding-bottom: 30px;
+  padding: 1.875rem 0 0 1.875rem;
 
-
-
-  .btn-group {
-    padding-left: 25px;
+  .btn-area {
+    padding-left: 1.5625rem;
+    display: flex;
+    align-items: center;
 
     button {
+      margin-bottom: 0.3125rem;
+
       span {
-        padding-left: 5px;
+        padding-left: 0.3125rem;
       }
+    }
+  }
+}
+
+.navigation-button {
+  height: fit-content;
+}
+
+.current-weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  padding-top: 0.3125rem;
+  list-style-type: none;
+  padding-left: 0.9375rem;
+
+  li {
+    padding: 0.0625rem;
+  }
+}
+
+.weather-description {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  padding: 0.9375rem 1.875rem;
+}
+
+table {
+  width: 100%;
+}
+
+.main-area {
+  padding: 1.25rem 0 0 0;
+  margin: 0;
+
+  .no-data-card {
+    margin: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h5 {
+      margin: 0;
+    }
+  }
+
+  .weather-content {
+    margin: 0;
+    padding: 0;
+
+    &>div {
+      padding-top: 0.3125rem;
     }
   }
 }

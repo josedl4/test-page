@@ -61,9 +61,9 @@ export class WeatherService {
       windSpeed: dayForecast.wind_speed,
       clouds: dayForecast.clouds,
       weatherStatus: {
-        icon: this.getIconUrl(dayForecast.weather.icon, this.ICON_SIZES.SMALL),
-        main: dayForecast.weather.main,
-        description: dayForecast.weather.description
+        icon: this.getIconUrl(dayForecast.weather[0].icon, this.ICON_SIZES.SMALL),
+        main: dayForecast.weather[0].main,
+        description: dayForecast.weather[0].description
       }
     }
   })

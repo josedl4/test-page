@@ -16,7 +16,15 @@ export class WeatherComponent implements OnInit {
   searchForm: FormGroup;
   currentLocation: IGeoLocation;
   public loading = false;
-  public cityDate: WeatherCity;
+  public cityWeather: WeatherCity;
+  public displayedColumns: string[] = [
+    'date',
+    'description',
+    'temp',
+    'humidity',
+    'windSpeed',
+    'clouds'
+  ];
 
   constructor(private locationService: LocationService, private weatherService: WeatherService) {
     this.searchForm = new FormGroup({
@@ -28,8 +36,8 @@ export class WeatherComponent implements OnInit {
 
   async searchPattern(): Promise<void> {
     const text = this.searchForm.get('searchText').value;
-    this.cityDate = await this.weatherService.getCityDataByName(text);
-    console.log(this.cityDate);
+    this.cityWeather = await this.weatherService.getCityDataByName(text);
+    console.log(this.cityWeather);
   }
 
   async searchByLocation(): Promise<void> {
@@ -37,8 +45,8 @@ export class WeatherComponent implements OnInit {
     try {
       this.currentLocation = await this.locationService.getPosition();
       if (this.currentLocation) {
-        this.cityDate = await this.weatherService.getCityDataByLocation(this.currentLocation);
-        console.log(this.cityDate);
+        this.cityWeather = await this.weatherService.getCityDataByLocation(this.currentLocation);
+        console.log(this.cityWeather);
       }
     } catch (e) {
       console.log('Rejected');
